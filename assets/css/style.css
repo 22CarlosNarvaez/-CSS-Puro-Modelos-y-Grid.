@@ -620,10 +620,10 @@ a { color: inherit; }
   .gl-sidebar { min-height: 60px; }
 
   /* box model más compacto */
-  .box-margin  { padding: 22px; }
-  .box-border  { padding: 22px; }
-  .box-padding { padding: 22px; }
-  .box-content { padding: 22px; font-size: 0.65rem; letter-spacing: 2px; }
+  .box-margin  { padding: 25px; }
+  .box-border  { padding: 25px; }
+  .box-padding { padding: 25px; }
+  .box-content { padding: 24px; font-size: 0.65rem; letter-spacing: 2px; }
 
   /* section-label tag oculto en móvil muy pequeño */
   .section-label span { display: none; }
