@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="author" content="Carlos Narvaez">
+  <meta name="description" content="Taller 2 — Multimedia: audio y video local y en la nube">
+  <meta name="theme-color" content="#0d0d0d">
+  <title>Taller 2 · Multimedia</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="./assets/img/audifonos-inalambricos.png">
+</head>
+<body>
+  <div class="container">
+
+    <header class="header">
+      <h1>Taller 2</h1>
+    </header>
+
+    <nav class="nav" aria-label="Menú principal">
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="multimedia.html">Multimedia</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="grid.html">Grid</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="main" id="inicio">
+
+        <article>
+          <div class="article-body">
+            <h2>Bienvenido al Taller 2</h2>
+            <p>Espacio de trabajo enfocado en diseño y desarrollo. Cada proyecto construido con atención al detalle y propósito.</p>
+          </div>
+          <div class="article-contact">
+            <span class="contact-label">Contacto</span>
+            <a href="https://www.instagram.com/?hl=es" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          </div>
+        </article>
+
+     
+
+      </section>
+    </main>
+
+
+    <section class="main">
+
+      <div class="banners">
+        <div class="banner-audio">
+          <h2>&lt;audio&gt;</h2>
+          <p>Etiqueta &lt;audio&gt; para embeber archivos de audio de forma local o desde un servidor en la nube.</p>
+        </div>
+        <div class="banner-video">
+          <h2>&lt;video&gt;</h2>
+          <p>Etiqueta &lt;video&gt; para embeber archivos de video de forma local o desde un servidor en la nube.</p>
+        </div>
+      </div>
+
+      <div class="grid-container">
+
+        <div class="card">
+          <div class="card-title">Uso de <code>&lt;audio&gt;</code> local</div>
+          <div class="card-media">
+            <img
+              class="card-thumb"
+              src="./assets/img/young-adorable-woman-with-cute-smile-wearing-headphones-against-city-background-free-photo.jpg"
+              alt="Portada audio local"
+              loading="lazy"
+              onerror="this.style.display='none'">
+            <audio controls>
+              <source src="./assets/audio/Penyair - La luz x Alka_Produce (Video oficial) (3).mp3" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Uso de <code>&lt;audio;&gt;</code> en la Nube</div>
+          <div class="card-media">
+            <img
+              class="card-thumb"
+              src="./assets/img/images.jpeg"
+              alt="Portada audio nube"
+              loading="lazy"
+              onerror="this.style.display='none'">
+            <audio controls>
+              <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Uso de <code>&lt;video&gt;</code> en la Nube</div>
+          <div class="card-media">
+            <iframe
+              src="https://www.youtube.com/embed/kGW5XXYqXkY"
+              title="NCS Best of 2024 - Copyright Free Music"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Uso de <code>&lt;video&gt;</code> local</div>
+          <div class="card-media">
+            <video controls preload="metadata">
+              <source src="./assets/video/videoplayback.mp4" type="video/mp4">
+              Tu navegador no soporta video HTML5.
+            </video>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer" id="contacto">
+      <p>Carlos programmer · © 2026</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.textContent = open ? '✕' : '☰';
+    });
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+        toggle.textContent = '☰';
+      });
+    });
+  </script>
+</body>
+</html>

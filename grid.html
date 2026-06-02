@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="author" content="Carlos Narvaez">
+  <meta name="description" content="Taller 2 — Grid Layout y Box Model CSS">
+  <meta name="theme-color" content="#0d0d0d">
+  <title>Taller 2 · Grid</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="./assets/img/audifonos-inalambricos.png">
+</head>
+<body>
+  <div class="container">
+
+    <header class="header">
+      <h1>Taller 2</h1>
+    </header>
+
+    <nav class="nav" aria-label="Menú principal">
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul id="nav-menu"> 
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="multimedia.html">Multimedia</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="grid.html">Grid</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="main">
+
+        <article>
+          <div class="article-body">
+            <h2>Grid Layout: Estructura Avanzada</h2>
+            <p>CSS Grid es perfecto para diseños bidimensionales. Controlamos filas y columnas con <code>grid-template-areas</code>.</p>
+          </div>
+        </article>
+
+        <div class="section-label">
+          <h3>Grid Layout</h3>
+          <span>grid-template-areas</span>
+        </div>
+
+        <div class="grid-layout">
+          <div class="gl-header">Header del Grid (Ocupa todas las columnas)</div>
+          <div class="gl-sidebar">Sidebar</div>
+          <div class="gl-main">Contenido Principal (Expansible)</div>
+          <div class="gl-widget1">Widget 1</div>
+          <div class="gl-widget2">Widget 2</div>
+          <div class="gl-footer">Footer del Grid</div>
+        </div>
+
+        <div class="section-label">
+          <h3>Grid de columnas</h3>
+          <span>repeat(5, 1fr)</span>
+        </div>
+
+        <div class="grid-demo">
+          <div class="grid-cell">01</div>
+          <div class="grid-cell">02</div>
+          <div class="grid-cell">03</div>
+          <div class="grid-cell">04</div>
+          <div class="grid-cell">05</div>
+        </div>
+
+        <div class="section-label">
+          <h3>Box Model</h3>
+          <span>margin · border · padding · content</span>
+        </div>
+
+        <section class="container-box-model">
+          <div class="box-margin">
+            <span class="box-label">Margin</span>
+            <div class="box-border">
+              <span class="box-label">Border</span>
+              <div class="box-padding">
+                <span class="box-label">Padding</span>
+                <div class="box-content">Content</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+      <p>Carlos programmer · © 2026</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.textContent = open ? '✕' : '☰';
+    });
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+        toggle.textContent = '☰';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="author" content="Carlos Narvaez">
+  <meta name="description" content="Taller 2 — Página de Contacto con Grid Layout">
+  <meta name="theme-color" content="#0d0d0d">
+  <title>Taller 2 · Contacto</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="./assets/img/audifonos-inalambricos.png">
+</head>
+<body>
+  <div class="container">
+
+    <!-- NAV PRINCIPAL DEL SITIO -->
+    <header class="header">
+      <h1>Taller 2</h1>
+    </header>
+
+    <nav class="nav" aria-label="Menú principal">
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="multimedia.html">Multimedia</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="grid.html">Grid</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
+      </ul>
+    </nav>
+    <div class="contact-page">
+      <header class="c-header">
+        <span class="c-header-brand">Carlos.dev</span>
+        <nav aria-label="Nav interno">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="grid.html">Proyectos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+      <aside class="c-aside">
+        <div class="profile-avatar">
+          <img src="./assets/img/foto.enc" alt="">
+        </div>
+        
+        <div class="profile-info">
+          <h2>Carlos Narvaez</h2>
+          <p>Desarrollador Frontend · SENA 2026</p>
+        </div>
+
+        <ul class="aside-nav">
+          <li>
+            <a href="index.html">
+              <span class="icon">🏠</span> Inicio
+            </a>
+          </li>
+          <li>
+            <a href="multimedia.html">
+              <span class="icon">🎬</span> Multimedia
+            </a>
+          </li>
+          <li>
+            <a href="grid.html">
+              <span class="icon">⊞</span> Grid
+            </a>
+          </li>
+          <li>
+            <a href="contacto.html" class="aside-active">
+              <span class="icon">✉</span> Contacto
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      
+      <main class="c-main">
+        <h2>Sobre este proyecto</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          vehicula sapien at libero dignissim, vel volutpat justo fringilla.
+          Pellentesque habitant morbi tristique senectus et netus et malesuada
+          fames ac turpis egestas. Cras volutpat, libero et gravida cursus,
+          enim nisi posuere nunc.
+        </p>
+        
+        <div class="c-main-img">
+          <img
+            src="./assets/img/401-400x200.jpg"
+            alt="Imagen central del proyecto"
+            loading="lazy"
+            onerror="this.outerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:160px;color:var(--text-dim);font-size:0.7rem;letter-spacing:2px\'>IMAGEN PRINCIPAL</div>'">
+        </div>
+      </main>
+
+    
+      <section class="c-sec1">
+        <h3>Diseño Responsivo</h3>
+        <p>
+          Cada componente está construido pensando en todos los tamaños de
+          pantalla, desde móviles de 360px hasta monitores 4K, usando CSS Grid
+          y unidades relativas.
+        </p>
+        <button class="btn-readmore" type="button">Leer más</button>
+      </section>
+
+      <section class="c-sec2">
+        <h3>Accesibilidad & Performance</h3>
+        <p>
+          Se aplican atributos ARIA, touch targets mínimos de 44px, lazy
+          loading en imágenes e iframes y fuentes del sistema para garantizar
+          tiempos de carga óptimos en cualquier red.
+        </p>
+        <button class="btn-readmore" type="button">Leer más</button>
+      </section>
+
+      <footer class="c-footer">
+        <p>© 2026 Carlos Narvaez · Todos los derechos reservados</p>
+        <div class="c-footer-links">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.textContent = open ? '✕' : '☰';
+    });
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+        toggle.textContent = '☰';
+      });
+    });
+  </script>
+</body>
+</html>

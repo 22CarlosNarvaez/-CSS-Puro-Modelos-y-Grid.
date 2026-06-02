@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="author" content="Carlos Narvaez">
+  <meta name="description" content="Taller 2 de maquetación web — Carlos Narvaez">
+  <meta name="keywords" content="TALLER,taller,Taller,HTML,CSS,Grid">
+  <meta name="theme-color" content="#0d0d0d">
+  <title>Taller 2</title>
+  <link rel="icon" type="image/x-icon" href="./assets/img/audifonos-inalambricos.png">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+</head>
+<body>
+  <div class="container">
+
+    <header class="header">
+      <h1>Taller 2</h1>
+    </header>
+
+    <nav class="nav" aria-label="Menú principal">
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="multimedia.html">Multimedia</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="grid.html">Grid</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="main" id="inicio">
+
+        <article>
+          <div class="article-body">
+            <h2>Bienvenido al Taller 2</h2>
+            <p>Espacio de trabajo enfocado en diseño y desarrollo. Cada proyecto construido con atención al detalle y propósito.</p>
+          </div>
+          <div class="article-contact">
+            <span class="contact-label">Contacto</span>
+            <a href="https://www.instagram.com/?hl=es" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          </div>
+        </article>
+
+        <section class="container-box-model">
+          <div class="box-margin">
+            <span class="box-label">Margin</span>
+            <div class="box-border">
+              <span class="box-label">Border</span>
+              <div class="box-padding">
+                <span class="box-label">Padding</span>
+                <div class="box-content">Content</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="services-block" id="servicios">
+          <div class="service-item">
+            <span class="service-index">01</span>
+            <span class="service-name">Diseño Web</span>
+          </div>
+          <div class="service-item">
+            <span class="service-index">02</span>
+            <span class="service-name">Desarrollo Frontend</span>
+          </div>
+          <div class="service-item">
+            <span class="service-index">03</span>
+            <span class="service-name">Backend</span>
+          </div>
+        </section>
+
+      </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+      <p>Carlos programmer · © 2026</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.textContent = open ? '✕' : '☰';
+    });
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+        toggle.textContent = '☰';
+      });
+    });
+  </script>
+</body>
+</html>
