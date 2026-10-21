@@ -1,4 +1,4 @@
-# 🎨 Taller 2 – Modelos, Grid y CSS puro
+#  Modelos, Grid y CSS puro
 
 En este taller aprendimos los diferentes **modelos y grid** disponibles en CSS, además de distintos estilos y maneras de darle un buen diseño a nuestra página web usando **solo CSS puro**. También integramos lo aprendido en el **Taller 1**.
 
